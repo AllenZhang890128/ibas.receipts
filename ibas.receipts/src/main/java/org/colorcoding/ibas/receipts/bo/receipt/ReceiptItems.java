@@ -62,6 +62,8 @@ public class ReceiptItems extends BusinessObjects<IReceiptItem, IReceipt> implem
     protected void afterAddItem(IReceiptItem item) {
         super.afterAddItem(item);
         // TODO 设置关联值
+        ((ReceiptItem)item).setBusinessPartnerCode(this.getParent().getBusinessPartnerCode());
+        ((ReceiptItem)item).setBusinessPartnerName(this.getParent().getBusinessPartnerName());
     }
 
     @Override

@@ -17,7 +17,7 @@ public class testReceipt extends TestCase {
      * 获取连接口令
     */
     String getToken() {
-        return "";
+        return "a332e755-d264-c3bc-b54d-8cecad384f1e";
     }
     
     /**
@@ -31,7 +31,9 @@ public class testReceipt extends TestCase {
         // 测试收款-项目
         IReceiptItem receiptitem = bo.getReceiptItems().create();
         // 测试属性赋值
-        
+        receiptitem.setBusinessPartnerCode("C0001");
+        receiptitem.setBusinessPartnerCode("奥维科技");
+        receiptitem.setAmount(100);
 
 
         // 测试对象的保存和查询
