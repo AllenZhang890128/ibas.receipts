@@ -16,10 +16,8 @@ public class testReceipt extends TestCase {
     /**
      * 获取连接口令
     */
-    String getToken() {
-        return "a332e755-d264-c3bc-b54d-8cecad384f1e";
-    }
-    
+    String getToken() { return "68fc6bac014d06ad94c5734116487cff";}
+
     /**
      * 基本项目测试
      * @throws Exception 

@@ -22,14 +22,8 @@ import org.colorcoding.ibas.receipts.MyConfiguration;
  * 
  */
 @XmlAccessorType(XmlAccessType.NONE)
-<<<<<<< HEAD
-@XmlType(name = ReceiptItem.BUSINESS_OBJECT_NAME, namespace = MyConsts.NAMESPACE_BO)
-public class ReceiptItem extends BusinessObject<ReceiptItem> implements IReceiptItem,IBusinessPartnerBalanceReceiptContract {
-=======
 @XmlType(name = ReceiptItem.BUSINESS_OBJECT_NAME, namespace = MyConfiguration.NAMESPACE_BO)
-public class ReceiptItem extends BusinessObject<ReceiptItem> implements IReceiptItem {
->>>>>>> upstream/master
-
+public class ReceiptItem extends BusinessObject<ReceiptItem> implements IReceiptItem,IBusinessPartnerBalanceReceiptContract {
 	/**
 	 * 序列化版本标记
 	 */
