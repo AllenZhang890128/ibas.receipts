@@ -470,7 +470,6 @@ export class ReceiptItems extends BusinessObjects<ReceiptItem, Receipt> implemen
     protected afterAdd(item: ReceiptItem): void {
         super.afterAdd(item);
         item.setProperty(ReceiptItem.PROPERTY_BUSINESSPARTNERCODE_NAME, this.parent.businessPartnerCode);
-        item.setProperty(ReceiptItem.PROPERTY_BUSINESSPARTNERNAME_NAME, this.parent.businessPartnerName);
         item.setProperty(ReceiptItem.PROPERTY_BUSINESSPARTNERTYPE_NAME, this.parent.businessPartnerType);
     }
 
@@ -480,7 +479,6 @@ export class ReceiptItems extends BusinessObjects<ReceiptItem, Receipt> implemen
         if (name === Receipt.PROPERTY_BUSINESSPARTNERCODE_NAME) {
             for (let item of this) {
                 item.setProperty(ReceiptItem.PROPERTY_BUSINESSPARTNERCODE_NAME, this.parent.businessPartnerCode);
-                item.setProperty(ReceiptItem.PROPERTY_BUSINESSPARTNERNAME_NAME, this.parent.businessPartnerName);
                 item.setProperty(ReceiptItem.PROPERTY_BUSINESSPARTNERTYPE_NAME, this.parent.businessPartnerType);
             }
         }

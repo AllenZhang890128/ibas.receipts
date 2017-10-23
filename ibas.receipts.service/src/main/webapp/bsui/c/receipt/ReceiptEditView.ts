@@ -130,34 +130,6 @@ export class ReceiptEditView extends ibas.BOEditView implements IReceiptEditView
             visibleRowCount: ibas.config.get(utils.CONFIG_ITEM_LIST_TABLE_VISIBLE_ROW_COUNT, 10),
             rows: "{/rows}",
             columns: [
-                // new sap.ui.table.Column("", {
-                //     label: ibas.i18n.prop("bo_receiptitem_businesspartnercode"),
-                //     template: new sap.m.Input("", {
-                //         width: "100%",
-                //         type: sap.m.InputType.Text
-                //     }).bindProperty("value", {
-                //         path: "businessPartnerCode"
-                //     })
-                // }),
-                // new sap.ui.table.Column("", {
-                //     label: ibas.i18n.prop("bo_receiptitem_businesspartnername"),
-                //     template: new sap.m.Input("", {
-                //         width: "100%",
-                //         type: sap.m.InputType.Text
-                //     }).bindProperty("value", {
-                //         path: "businessPartnerName"
-                //     })
-                // }),
-                // new sap.ui.table.Column("", {
-                //     label: ibas.i18n.prop("bo_receiptitem_businesspartnertype"),
-                //     template: new sap.m.Select("", {
-                //         width: "100%",
-                //         items: utils.createComboBoxItems(emBusinessPartnerType),
-                //     }).bindProperty("selectedKey", {
-                //         path: "businessPartnerType",
-                //         type: "sap.ui.model.type.Integer",
-                //     })
-                // }),
                 new sap.ui.table.Column("", {
                     label: ibas.i18n.prop("bo_receiptitem_linestatus"),
                     template: new sap.m.Select("", {

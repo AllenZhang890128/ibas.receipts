@@ -65,9 +65,6 @@ public class ReceiptItems extends BusinessObjects<IReceiptItem, IReceipt> implem
         if (this.getParent().getBusinessPartnerCode()!=null&&item.getBusinessPartnerCode()==null){
             item.setBusinessPartnerCode(this.getParent().getBusinessPartnerCode());
         }
-        if (this.getParent().getBusinessPartnerName()!=null&&item.getBusinessPartnerName()==null){
-            item.setBusinessPartnerName(this.getParent().getBusinessPartnerName());
-        }
     }
 
     @Override
@@ -84,7 +81,6 @@ public class ReceiptItems extends BusinessObjects<IReceiptItem, IReceipt> implem
         if(evt.getPropertyName()==Receipt.PROPERTY_BUSINESSPARTNERCODE.getName()){
             for(IReceiptItem item : this){
                 item.setBusinessPartnerCode(this.getParent().getBusinessPartnerCode());
-                item.setBusinessPartnerName(this.getParent().getBusinessPartnerName());
             }
         }
     }

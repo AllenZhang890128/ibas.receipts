@@ -1233,37 +1233,7 @@ public class ReceiptItem extends BusinessObject<ReceiptItem> implements IReceipt
 		this.setProperty(PROPERTY_BUSINESSPARTNERCODE, value);
 	}
 
-	/**
-	 * 属性名称-业务伙伴名称
-	 */
-	private static final String PROPERTY_BUSINESSPARTNERNAME_NAME = "BusinessPartnerName";
 
-	/**
-	 * 业务伙伴名称 属性
-	 */
-	@DbField(name = "CardName", type = DbFieldType.ALPHANUMERIC, table = DB_TABLE_NAME, primaryKey = false)
-	public static final IPropertyInfo<String> PROPERTY_BUSINESSPARTNERNAME = registerProperty(
-			PROPERTY_BUSINESSPARTNERNAME_NAME, String.class, MY_CLASS);
-
-	/**
-	 * 获取-业务伙伴名称
-	 *
-	 * @return 值
-	 */
-	@XmlElement(name = PROPERTY_BUSINESSPARTNERNAME_NAME)
-	public final String getBusinessPartnerName() {
-		return this.getProperty(PROPERTY_BUSINESSPARTNERNAME);
-	}
-
-	/**
-	 * 设置-业务伙伴名称
-	 *
-	 * @param value
-	 *            值
-	 */
-	public final void setBusinessPartnerName(String value) {
-		this.setProperty(PROPERTY_BUSINESSPARTNERNAME, value);
-	}
 	/**
 	 * 初始化数据
 	 */
@@ -1279,13 +1249,8 @@ public class ReceiptItem extends BusinessObject<ReceiptItem> implements IReceipt
 	@Override
 	public IBusinessLogicContract[] getContracts() {
 		return new IBusinessLogicContract[]{
-				//注册业务伙伴余额受收款影响的契约
-				new IReceiptBusinessPartnerBalanceJournalContract(){
+				new IReceiptBusinessPartnerBalanceJournalContract() {
 					@Override
-					public String getIdentifiers() {
-						return ReceiptItem.this.getIdentifiers();
-					}
-
 					public emBusinessPartnerType getBusinessPartnerType() {
 						return ReceiptItem.this.getBusinessPartnerType();
 					}
@@ -1293,11 +1258,6 @@ public class ReceiptItem extends BusinessObject<ReceiptItem> implements IReceipt
 					@Override
 					public String getBusinessPartnerCode() {
 						return ReceiptItem.this.getBusinessPartnerCode();
-					}
-
-					@Override
-					public String getBusinessPartnerName() {
-						return ReceiptItem.this.getBusinessPartnerName();
 					}
 
 					@Override
@@ -1338,6 +1298,11 @@ public class ReceiptItem extends BusinessObject<ReceiptItem> implements IReceipt
 					@Override
 					public Integer getBaseDocumentLineId() {
 						return ReceiptItem.this.getLineId();
+					}
+
+					@Override
+					public String getIdentifiers() {
+						return ReceiptItem.this.getIdentifiers();
 					}
 				}
 		};
